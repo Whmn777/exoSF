@@ -45,11 +45,11 @@ class ArticleController extends AbstractController
             'article' => $article
         ]);
     }
-
+/*
     /**
      * @Route("/", name="home")
      */
-    public function articleRecent(ArticleRepository $articleRepository)
+/*    public function articleRecent(ArticleRepository $articleRepository)
     {
         //Je récupère mes articles publiés
         $articleRecent = $articleRepository ->findBy(['isPublished' => true],['id' => 'DESC'],2);
@@ -58,5 +58,6 @@ class ArticleController extends AbstractController
             'articleRecent' => $articleRecent
         ]);
     }
+*/
 }
 
