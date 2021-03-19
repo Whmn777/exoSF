@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Liste des articles
+{% endblock title %}
+
+
+{% block article %}
+        {% for article in articles %}
+                <div class="article">
+                        <h1>{{article.title}}</h1>
+                        <div class="image visible"><img src="{{article.image}}" alt="{{ article.title }}" class="resp anim"></div>
+                        <p>{{ article.createdAt|date('d/m/Y') }}</p>
+                </div>
+
+        {% endfor %}
+{% endblock article %}

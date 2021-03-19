@@ -1,0 +1,224 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: Impact;
+}
+
+.resp{
+    width: 100%;
+    height:auto;
+}
+
+
+.d-flex{
+    display:flex;
+}
+
+.column{
+    flex-direction: column;
+}
+
+.wrap{
+    flex-wrap: wrap;
+}
+
+.space-around{
+    justify-content: space-around;
+}
+
+.space-between{
+    justify-content: space-between;
+}
+
+.align-items{
+    align-items: center;
+}
+
+.justify-content-center{
+    justify-content: center;
+}
+
+.relative{
+    position: relative;
+}
+
+.absolute{
+    position: absolute;
+}
+
+.container{
+    width: 90%;
+    margin:0 auto;
+}
+
+/* header */
+
+header{
+    height:20vh;
+    background-color: black;
+    opacity : 0.9;
+}
+
+header nav{
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
+    position: fixed;
+    top:0;
+    left:0;
+    z-index: 150;
+}
+
+header nav ul{
+    width:80%;
+    padding-top: 40px;
+}
+
+header nav li{
+
+    list-style-type: none;
+    font-size: 32px;
+}
+
+header nav li a{
+    text-decoration: none;
+    color: gold;
+    text-shadow: 1px 1px 2px black;
+    height:80%;
+    padding: auto;
+    transition: all 0.5s ease;
+
+}
+header nav ul li a:hover{
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: whitesmoke;
+    border-radius: 10px;
+    transform: scale(1.5);
+    -webkit-transform: scale(1.5);
+    -ms-transform: scale(1.5);
+}
+
+.logo{
+    width: 8%;
+    border-radius: 20px;
+    border: solid 3px lavenderblush;
+    box-shadow: 0 15px 60px #3232321a,0 5px 60px #0255255a;
+    background: linear-gradient(90deg, #585858, ghostwhite) center center no-repeat;
+
+}
+
+/*body*/
+.container{
+    width: 80%;
+}
+
+
+article{
+    height:45%;
+}
+.article {
+    width: 50%;
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(24,34,135,0.2);
+}
+
+h1{
+    font-family: Impact;
+    font-size: 24px;
+    color: olive;
+    padding: 20px;
+    opacity: 0.6;
+}
+
+p{
+    font-family: "Al Nile";
+    text-align: justify;
+}
+
+/* home body */
+
+.home{
+
+    height:60vh;
+    width: 100%;
+
+}
+.tortue{
+
+}
+
+.h1-home{
+    font-size: 72px;
+
+}
+
+/* animation image */
+
+.image:not(.visible){
+    overflow: hidden;
+}
+
+.anim{
+    transition: all 1s ease;
+    width:100%;
+}
+
+.anim:hover>img{
+    transform: scale(1.2);
+}
+
+/* footer */
+
+footer{
+    height:24vh;
+    background-color: black;
+    opacity : 0.9;
+}
+
+footer nav{
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
+    top:0;
+    left:0;
+    z-index: 200;
+}
+
+footer nav ul{
+    width:80%;
+    padding-top: 40px;
+}
+
+footer nav li{
+
+    list-style-type: none;
+    font-size: 32px;
+}
+
+footer nav li a{
+    text-decoration: none;
+    color: gold;
+    text-shadow: 1px 1px 2px black;
+    height:80%;
+    padding: auto;
+    transition: all 0.5s ease;
+
+}
+footer nav ul li a:hover{
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: whitesmoke;
+    border-radius: 10px;
+    transform: scale(1.5);
+    -webkit-transform: scale(1.5);
+    -ms-transform: scale(1.5);
+}
+
+
+
+
+
+

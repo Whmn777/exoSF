@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %}{% endblock title %}</title>
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+</head>
+<body>
+<header>
+        <nav class="d-flex space-around">
+            <div class="logo"><a href=""><img src="{{ asset('assets/img/logo.png') }}" alt="logo" class="resp">
+                    </a></div>
+            <ul class="d-flex space-around">
+                <li> </li>
+                <li> <a href="">Actualités</a></li>
+                <li> <a href=""> Connexion</a></li>
+                <li> <a href="">S'insrcire</a></li>
+            </ul>
+        </nav>
+
+    {% block header %}{% endblock header %}
+</header>
