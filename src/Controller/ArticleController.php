@@ -29,13 +29,13 @@ class ArticleController extends AbstractController
      */
     public function searchArticles(Request $request, ArticleRepository $articleRepository)
     {
-        // faire une recherche en base de données avec ce parametre
+        // faire une recherche en base de données avec ce paramètre
 
-        $search = $request->query->get('search');
+        $search = $request->query->get('search'); // avec la class Request, je récupère la valeur dans l'url
 
         //Je récupère tous mes articles ($articles) contenant la valeur saisie de par l'utilisateur dans l'input = $search
         // dans ma BBD,
-        // avec la méthode searchByTerm de la class ArticleRepository,
+        // avec la méthode searchByTerm de la class ArticleRepository (que je vais créer),
 
         $articles = $articleRepository->searchByTerm($search);
 

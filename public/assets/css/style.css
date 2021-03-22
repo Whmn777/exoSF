@@ -112,6 +112,7 @@ header nav ul li a:hover{
 
 
 /*body*/
+
 .container{
     width: 80%;
 }
@@ -120,6 +121,7 @@ header nav ul li a:hover{
 article{
     height:45%;
 }
+
 .article {
     width: 50%;
     text-align: center;
