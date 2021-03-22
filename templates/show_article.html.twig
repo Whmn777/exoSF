@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block main %}
+
+    <section class="articles-container">
+
+        <article class="article">
+
+            {# La fonction path() : permet d'établir un LIEN :
+            elle prend pour argument:
+            1=> D'abord le name de la route;
+            2=> Un objet définit par les valeurs = article.id de la wildcard = id , à inclure dans l’url (avec href). #}
+
+            <a href="{{ path('show_article', {'id': article.id}) }}">
+                <h1>{{article.title}}</h1>
+            </a>
+            <p>{{ article.content }}</p>
+        </article>
+
+    </section>
+
+{% endblock %}

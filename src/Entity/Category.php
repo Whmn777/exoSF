@@ -40,5 +40,85 @@ class Category
      */
     private $isPublished;
 
+    /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getTitle()
+    {
+        return $this->title;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCreateAT()
+    {
+        return $this->createAT;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getIsPublished()
+    {
+        return $this->isPublished;
+    }
+
+    /**
+     * @param mixed $id
+     */
+    public function setId($id): void
+    {
+        $this->id = $id;
+    }
+
+    /**
+     * @param mixed $title
+     */
+    public function setTitle($title): void
+    {
+        $this->title = $title;
+    }
+
+    /**
+     * @param mixed $description
+     */
+    public function setDescription($description): void
+    {
+        $this->description = $description;
+    }
+
+    /**
+     * @param mixed $createAT
+     */
+    public function setCreateAT($createAT): void
+    {
+        $this->createAT = $createAT;
+    }
+
+    /**
+     * @param mixed $isPublished
+     */
+    public function setIsPublished($isPublished): void
+    {
+        $this->isPublished = $isPublished;
+    }
+
 }
 

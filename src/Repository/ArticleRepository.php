@@ -19,6 +19,31 @@ class ArticleRepository extends ServiceEntityRepository
         parent::__construct($registry, Article::class);
     }
 
+    public function searchByTerm($search)
+    {
+        //Je crée une nouvelle requête $queryBuilder pour récupérer tous les articles
+        // contenant la valeur de notre input de recherche grâce à la méthode createQueryBuilder()
+
+        //de la class EntityRepository:
+
+        $queryBuilder = $this->createQueryBuilder("a"); //Je lui attribue un alias en paramètre
+
+        //Je stocke cette nouvelle requête de recherche dans une variable $query et en y définnisant les termes :
+        $query = $queryBuilder
+            ->select('a')
+            ->where('a.content LIKE :search')
+        //SELECT a.* FROM myclass AS a WHERE a.content LIKE :search'
+
+        //Avec Doctrine on lie les paramètres à notre requête (liaison dynamique) => préparation de requête pour
+        //plus de sécurité
+        //L'appel de setParameter () déduit automatiquement le type que nous définissons comme valeur.
+            ->setParameter('search','%'.$search.'%')
+            ->getQuery('');//on récupère notre requête.
+
+        return $query->getResult();//on retourne le résultat de cette dernière.
+    }
+
+
     // /**
     //  * @return Article[] Returns an array of Article objects
     //  */
