@@ -14,10 +14,10 @@
         {% for article in articles %}
             <div class="article">
                 {% if article.category %}
-                <h2>{{ article.category.title }}</h2>
-                (%endif%}
-                <a href="{{ path('admin_show_article', {'id': article.id}) }}">
-                    <h1>{{article.title}}</h1>
+                    <h1>{{ article.category.title }}</h1>
+                {%endif%}
+                <a href="{{ path('admin_show_article', {'id': article.id}) }}" class="lienArticles">
+                    <h2 >{{article.title}}</h2>
                 </a>
                 <div class="image visible"><img src="{{article.image}}" alt="{{ article.title }}" class="resp anim"></div>
                 <p>{{ article.createdAt|date('d/m/Y') }}</p>
