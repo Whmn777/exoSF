@@ -44,11 +44,6 @@ class ArticleController extends AbstractController
         ]);
     }
 
-    //Je crée une nouvelle route pour accéder à la page de chaque article, en utilisant la wilde card {id}
-
-    /**
-     * @Route("/articles/{id}", name="article_show" )
-     */
 
     //Je crée une méthode publique articleShow ayant pour paramètres, la valeur de la wild card : {id}
     // l'injection de dépendances (class) ou encore l'autowire ayant pour class ArticleRepository

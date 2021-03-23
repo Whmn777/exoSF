@@ -137,6 +137,9 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/assets/fonts" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
     </key>
@@ -150,7 +153,7 @@
       <option name="presentableId" value="Default" />
       <updated>1616062042028</updated>
       <workItem from="1616062044672" duration="1169000" />
-      <workItem from="1616066210145" duration="52380000" />
+      <workItem from="1616066210145" duration="71515000" />
     </task>
     <servers />
   </component>
@@ -158,6 +161,14 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="512" y="166" key="#com.intellij.ide.util.MemberChooser" timestamp="1616508242228">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="512" y="166" key="#com.intellij.ide.util.MemberChooser/0.0.1440.900@0.0.1440.900" timestamp="1616508242228" />
+    <state x="458" y="212" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1616489495236">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="458" y="212" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1440.900@0.0.1440.900" timestamp="1616489495236" />
     <state x="488" y="183" key="NewPhpClassDialog" timestamp="1616417714028">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -166,5 +177,9 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="543" y="380" key="NewPhpFileDialog/0.0.1440.900@0.0.1440.900" timestamp="1616072754754" />
+    <state x="100" y="100" width="1240" height="700" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1616503728292">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state x="100" y="100" width="1240" height="700" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.23.1440.877@0.23.1440.877" timestamp="1616503728292" />
   </component>
 </project>

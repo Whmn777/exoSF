@@ -42,6 +42,27 @@ class Article
      */
     private $isPublished;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Category")
+     */
+    private  $Category;
+
+    /**
+     * @param mixed $Category
+     */
+    public function setCategory($Category): void
+    {
+        $this->Category = $Category;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCategory()
+    {
+        return $this->Category;
+    }
+
     public function getId(): ?int
     {
         return $this->id;

@@ -1,0 +1,22 @@
+{% include '_header.html.twig' %}
+
+<main>
+    <section class="container">
+        <article class="d-flex wrap ">
+            {% block article %}
+            {% endblock article %}
+        </article>
+    </section>
+</main>
+
+{# je regarde si des messages flashs ont été ajoutés à la session, si oui je les affiche #}
+    {% for message in app.flashes('success') %}
+        <div class="flash-success">
+            {{ message }}
+        </div>
+    {% endfor %}
+
+{% include '_footer.html.twig' %}
+
+</body>
+</html>

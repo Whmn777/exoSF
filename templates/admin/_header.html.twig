@@ -15,22 +15,20 @@
 <body>
 <header style="background-image: url('{{ asset('assets/img/image.jpg')}}')";>
 
-        <nav class="d-flex space-around">
-            <div class="logo">
-                <a href="">
-                    <img src="{{ asset('assets/img/logo.png') }}" alt="logo" class="resp">
-                </a>
-            </div>
-            <form action="{{ path('search_articles') }}" class="search-form-articles">
-                <input type="text" name="search" placeholder="Rechercher">
-            </form>
+    <nav class="d-flex space-around">
+        <div class="logo">
+            <a href="">
+                <img src="{{ asset('assets/img/logo.png') }}" alt="logo" class="resp">
+            </a>
+        </div>
+        <form action="{{ path('search_articles') }}" class="search-form-articles">
+            <input type="text" name="search" placeholder="Rechercher">
+        </form>
 
 
-            <ul class="d-flex space-around align-items">
-                <li> <a href="">Actualités</a></li>
-                <li> <a href=""> Connexion</a></li>
-                <li> <a href="">S'insrcire</a></li>
-            </ul>
-        </nav>
-
-</header>
+        <ul class="d-flex space-around align-items">
+            <li> <a href="">Actualités</a></li>
+            <li> <a href=""> Connexion</a></li>
+            <li> <a href="">S'insrcire</a></li>
+        </ul>
+    </nav>
