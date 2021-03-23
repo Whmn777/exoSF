@@ -13,7 +13,9 @@
     {% if articles|length>0 %}
         {% for article in articles %}
             <div class="article">
+                {% if article.category %}
                 <h2>{{ article.category.title }}</h2>
+                (%endif%}
                 <a href="{{ path('admin_show_article', {'id': article.id}) }}">
                     <h1>{{article.title}}</h1>
                 </a>

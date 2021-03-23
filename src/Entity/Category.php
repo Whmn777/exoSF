@@ -4,6 +4,7 @@
 namespace App\Entity;
 
 use App\Repository\CategoryRepository;
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 /**
  * @ORM\Entity(repositoryClass=CategoryRepository::Class)
@@ -39,6 +40,34 @@ class Category
      * @ORM\Column(type="boolean")
      */
     private $isPublished;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Article", mappedBy="category")
+     */
+    private $articles;
+
+    public function __construct()
+    {
+        $this->articles = new ArrayCollection();
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getArticles()
+    {
+        return $this->articles;
+    }
+
+    /**
+     * @param mixed $articles
+     */
+    public function setArticles($articles): void
+    {
+        $this->articles = $articles;
+    }
+
+
 
     /**
      * @return mixed

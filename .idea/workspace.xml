@@ -134,6 +134,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -153,7 +154,7 @@
       <option name="presentableId" value="Default" />
       <updated>1616062042028</updated>
       <workItem from="1616062044672" duration="1169000" />
-      <workItem from="1616066210145" duration="71862000" />
+      <workItem from="1616066210145" duration="83515000" />
     </task>
     <servers />
   </component>
@@ -161,22 +162,26 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="512" y="166" key="#com.intellij.ide.util.MemberChooser" timestamp="1616508242228">
+    <state x="512" y="166" key="#com.intellij.ide.util.MemberChooser" timestamp="1616528793861">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="512" y="166" key="#com.intellij.ide.util.MemberChooser/0.0.1440.900@0.0.1440.900" timestamp="1616508242228" />
+    <state x="512" y="166" key="#com.intellij.ide.util.MemberChooser/0.0.1440.900@0.0.1440.900" timestamp="1616528793861" />
     <state x="458" y="212" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1616489495236">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="458" y="212" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1440.900@0.0.1440.900" timestamp="1616489495236" />
-    <state x="488" y="183" key="NewPhpClassDialog" timestamp="1616417714028">
+    <state x="488" y="183" key="NewPhpClassDialog" timestamp="1616538057855">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="488" y="183" key="NewPhpClassDialog/0.0.1440.900@0.0.1440.900" timestamp="1616417714028" />
-    <state x="543" y="380" key="NewPhpFileDialog" timestamp="1616072754754">
+    <state x="488" y="183" key="NewPhpClassDialog/0.0.1440.900@0.0.1440.900" timestamp="1616538057855" />
+    <state x="543" y="380" key="NewPhpFileDialog" timestamp="1616524576224">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="543" y="380" key="NewPhpFileDialog/0.0.1440.900@0.0.1440.900" timestamp="1616072754754" />
+    <state x="543" y="380" key="NewPhpFileDialog/0.0.1440.900@0.0.1440.900" timestamp="1616524576224" />
+    <state x="229" y="89" key="SettingsEditor" timestamp="1616522875675">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="229" y="89" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1616522875675" />
     <state x="100" y="100" width="1240" height="700" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1616503728292">
       <screen x="0" y="23" width="1440" height="877" />
     </state>

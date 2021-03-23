@@ -85,10 +85,10 @@ header nav form input {
     font-size: 1rem;
     text-align: center;
     color-rendering: optimizeQuality;
-    color: #dfdfdf;
+    color: #ffffff;
     text-shadow: 1px 1px 1px #000;
     border-radius: 10px;
-    background-color: rgba(255, 174, 173,0.7);
+    background-color: rgba(100, 100, 173,0.7);
     background-image: linear-gradient(to top left,
     rgba(0, 0, 0, .2),
     rgba(0, 0, 0, .2) 30%,
@@ -171,13 +171,40 @@ article{
     background-color: rgba(40,40,14,0.2);
 }
 
-h1{
-    font-family: Impact;
-    font-size: 24px;
-    color: olive;
-    padding: 20px;
-    opacity: 0.6;
+.lienArticles{
+    text-decoration: none;
+    margin : 20px;
+
 }
+
+h2{
+    font-family: Impact;
+    padding: 20px;
+    opacity: 0.8;
+    border: 0;
+    line-height: 2.5;
+    padding: 20px 20px;
+    font-size: 2rem;
+    text-align: center;
+    color-rendering: optimizeQuality;
+    color: rgba(32,102,252);
+    text-shadow: 1px 1px 1px #dfdfdf;
+    border-radius: 10px;
+    background-color: rgba(134, 174, 173,0.7);
+    background-image: linear-gradient(to top left,
+    rgba(0, 0, 0, .2),
+    rgba(0, 0, 0, .2) 50%,
+    rgba(0, 0, 0, 0));
+    box-shadow: inset 2px 2px 3px rgba(255, 255, 255, .8),
+    inset -2px -2px 3px rgba(0, 0, 0, .6);
+
+}
+
+h2{
+    margin: 20Px;
+}
+
+
 
 p{
     font-family: "Al Nile";
@@ -185,22 +212,28 @@ p{
 
 }
 
+.categories{
+    width: 100%;
+    text-align: center;
+    background-color: #AAAAAA;
+}
+
+.categories:nth-child(2n+1){
+    background-color: floralwhite;
+}
+
 /* home body */
 
-.home{
-
-    height:60vh;
+.home {
+    height: 60vh;
     width: 100%;
-
-}
-.tortue{
-
 }
 
 .h1-home{
     font-size: 72px;
-
 }
+
+
 
 /* animation image */
 
@@ -247,12 +280,11 @@ footer nav ul{
 }
 
 footer nav li{
-
     list-style-type: none;
     font-size: 32px;
 }
 
-footer nav li a{
+footer>nav>li>a{
     text-decoration: none;
     color: gold;
     text-shadow: 1px 1px 2px black;

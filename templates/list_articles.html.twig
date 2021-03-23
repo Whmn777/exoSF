@@ -13,9 +13,13 @@
         {% if articles|length>0 %}
                 {% for article in articles %}
                         <div class="article">
-                                <h2>{{ article.category.title }}</h2>
-                                <a href="{{ path('show_article', {'id': article.id}) }}">
-                                        <h1>{{article.title}}</h1>
+                                {#  Pour faire afficher le titre de ma catégorie : j'appelle article.category.title
+                                grâce à la relation ManyToOne qui relie les deux entités : article et category.#}
+                                {% if article.category%}
+                                <h1>{{ article.category.title }}</h1>
+                                {% endif %}
+                                <a href="{{ path('show_article', {'id': article.id}) }}" class="lienArticles">
+                                        <h2>{{article.title}}</h2>
                                 </a>
                                         <div class="image visible"><img src="{{article.image}}" alt="{{ article.title }}" class="resp anim"></div>
                                         <p>{{ article.createdAt|date('d/m/Y') }}</p>

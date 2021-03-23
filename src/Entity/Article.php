@@ -2,9 +2,9 @@
 
 namespace App\Entity;
 
+
 use App\Repository\ArticleRepository;
 use Doctrine\ORM\Mapping as ORM;
-
 /**
  * @ORM\Entity(repositoryClass=ArticleRepository::class)
  */
@@ -35,7 +35,7 @@ class Article
     /**
      * @ORM\Column(type="date")
      */
-    private $CreatedAt;
+    private $createdAt;
 
     /**
      * @ORM\Column(type="boolean", nullable=true)
@@ -43,16 +43,17 @@ class Article
     private $isPublished;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Category")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Category", inversedBy="articles")
      */
-    private  $Category;
+    private  $category;
+
 
     /**
-     * @param mixed $Category
+     * @param mixed $category
      */
-    public function setCategory($Category): void
+    public function setCategory($category): void
     {
-        $this->Category = $Category;
+        $this->category = $category;
     }
 
     /**
@@ -60,7 +61,7 @@ class Article
      */
     public function getCategory()
     {
-        return $this->Category;
+        return $this->category;
     }
 
     public function getId(): ?int
@@ -106,12 +107,12 @@ class Article
 
     public function getCreatedAt(): ?\DateTimeInterface
     {
-        return $this->CreatedAt;
+        return $this->createdAt;
     }
 
-    public function setCreatedAt(\DateTimeInterface $CreatedAt): self
+    public function setCreatedAt(\DateTimeInterface $createdAt): self
     {
-        $this->CreatedAt = $CreatedAt;
+        $this->createdAt = $createdAt;
 
         return $this;
     }
