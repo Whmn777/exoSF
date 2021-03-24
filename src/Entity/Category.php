@@ -60,7 +60,7 @@ class Category
     //Mais une catégorie peut avoir plusieurs articles :
     //Avec la publique fonction __construct() :
     //J'instancie sous forme d'une collection d'articles, un array (type : object)
-    //que pouurait contenir cette seule catégorie.
+    //qui pouurait contenir cette seule catégorie.
 
     public function __construct()
     {

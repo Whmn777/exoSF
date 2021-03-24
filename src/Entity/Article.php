@@ -43,12 +43,12 @@ class Article
     private $isPublished;
 
 
-    //Avec l'annotation @Orm(Object-Relationnel-Mapping) => Je crée des relations entre mes deux entités (tables en BDD).
+    //Avec l'annotation @Orm(Object-Relationnel-Mapping) => Je crée une relation  entre mes deux entités (tables en BDD).
     //Doctrine concrétise cette relation en générant des Foreign Key (ici sur la table Article => category_id) pour relier
     //l'entité ciblée => Category à l'entité Article.
     //Mon entité Article étant le côté prioritaire de mon association de tables (avec ManyToOne):
     //J'utilise l'attribut "inversedBy" à qui je donne donc la valeur de ma table d'association prioritaire:
-    //inversedBy="articles
+    //inversedBy="articles"
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Category", inversedBy="articles")
