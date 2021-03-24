@@ -20,30 +20,6 @@ class CategoryRepository extends ServiceEntityRepository
         parent::__construct($registry, Category::class);
     }
 
-    public function searchByTerm($search)
-    {
-        //Je crée une nouvelle requête $queryBuilder pour récupérer tous les articles
-        // contenant la valeur de notre input de recherche grâce à la méthode createQueryBuilder()
-
-        //de la class EntityRepository:
-
-        $queryBuilder = $this->createQueryBuilder("c"); //Je lui attribue un alias en paramètre
-
-        //Je stocke cette nouvelle requête de recherche dans une variable $query et en y définnisant les termes :
-        $query = $queryBuilder
-            ->select('c')
-            ->where('c.content LIKE :search')
-            //SELECT c.* FROM myclass AS c WHERE c.content LIKE :search'
-
-            //Avec Doctrine on lie les paramètres à notre requête (liaison dynamique) => préparation de requête pour
-            //plus de sécurité
-            //L'appel de setParameter () déduit automatiquement le type que nous définissons comme valeur.
-            ->setParameter('search', '%' . $search . '%')
-            ->getQuery('');//on récupère notre requête.
-
-        return $query->getResult();//on retourne le résultat de cette dernière.
-    }
-
 
     // /**
     //  * @return Category[] Returns an array of Category objects

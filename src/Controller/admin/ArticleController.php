@@ -4,6 +4,7 @@
 namespace App\Controller\admin;
 
 use App\Entity\Article;
+use App\Form\ArticleType;
 use App\Repository\ArticleRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -87,7 +88,22 @@ class ArticleController extends AbstractController
 
         $article = new Article();
 
-        //J'utilise les setteurs pour insérer mes nouvelles valeurs de mes propriétés
+        //Je stocke mon gabarit de formulaire dans la variable $articleForm :
+        //avec la méthode creatForm() de l'AbstractController je crée une nouvelle instance
+        //et lui passe en paramètres ma class ArticleType (qui contient mon gabarit de formulaire)
+        //et $article, le nouvel article à créer.
+
+        $articleForm = $this->createForm(ArticleType::class, $article);
+
+        //Je retourne ma méthode insertArticle() pour l'afficher avec la méthode render():
+        //avec la méthode createView() je crée une vue de $articleForm que pourra lire twig
+        //afin de pouvoir afficher mon formulaire grâce à la variable "articleFormView"
+
+        return $this->render("admin/insert_article.html.twig", [
+            "articleFormView" => $articleForm->createView()
+        ]);
+
+        /*J'utilise les setteurs pour insérer mes nouvelles valeurs de mes propriétés
         $article->setTitle("Nouvel article inséré");
         $article->setContent("BLABLABLA");
         $article->setImage("https://static.fnac-static.com/multimedia/Images/FR/NR/20/2b/37/3615520/1540-1/tsp20180403100657/Toto-un-sacre-numero.jpg");
@@ -107,7 +123,8 @@ class ArticleController extends AbstractController
 
         //Je retourne donc le résultat de ma fonction en l'affichant sur la page admin/articles.html.twig, avec la méthode
         //render() de l'AbstractController.
-        return $this->render('admin/article.html.twig');
+        return $this->render('admin/article.html.twig');*/
+
 
 
     }
