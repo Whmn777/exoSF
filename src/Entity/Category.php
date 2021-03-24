@@ -67,7 +67,7 @@ class Category
         $this->articles = new ArrayCollection();
     }
 
-    //Je crée mes méthodes getteur et setteur afin de pouvoir avoir accès à ces articles (pour les lire, modifier,
+    //Je crée mes méthodes getteur et setteur afin de pouvoir avoir accès à ces articles (=> les lire, modifier,
     //créer et supprimer)
     /**
      * @return mixed
