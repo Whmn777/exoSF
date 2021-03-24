@@ -80,7 +80,7 @@ class ArticleController extends AbstractController
      * @route("/admin/articles/insert", name="admin_insert_article")
      */
 
-    public function insertArticle(EntityManagerInterface $entityManager)
+    public function insertArticle(EntityManagerInterface $entityManager, Request $request)
     {
         //Dans la variable $article, j'instancie un nouvel objet newArticle de la classe entité Article.
         //Je peux ainsi redéfinir à ma class entité des nouvelles propriétés, qui seront insérer comme des
@@ -94,6 +94,21 @@ class ArticleController extends AbstractController
         //et $article, le nouvel article à créer.
 
         $articleForm = $this->createForm(ArticleType::class, $article);
+
+        //Je récupère les données entrées par l'utilisateur dans le formulaire, avec la class Request
+        //Je le lie ces données à ma variable $articleForm
+        $articleForm->handleRequest($request);
+
+        //Si les données du formulaire sont envoyées et qu'elles sont valides
+        if($articleForm->isSubmitted() && $articleForm->isValid()){
+
+            //je les récupère avec la méthode getData() da la class FormInterface dans mon entité $article
+            $article = $articleForm->getData();
+
+            //J'envoie et enregistre tout en BDD.
+            $entityManager->persist($article);
+            $entityManager->flush();
+        }
 
         //Je retourne ma méthode insertArticle() pour l'afficher avec la méthode render():
         //avec la méthode createView() je crée une vue de $articleForm que pourra lire twig
