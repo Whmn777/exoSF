@@ -4,8 +4,12 @@
     <div class="categories">
         {% for category in categories %}
 
+            {#  Pour faire afficher le titre de ma catégorie : category.title
+             grâce à la relation OneToMany qui relie les deux entités : article et category.#}
             <h2>{{ category.title }}</h2>
 
+            {# articles étant une arrayCollection j'effectue une boucle
+            afin de récupérer chaque articles contenu dans chaque catégorie : ici on récupère le titre de chaque article#}
             {% for article in category.articles %}
                 <h3>{{ article.title }}</h3>
             {% endfor%}

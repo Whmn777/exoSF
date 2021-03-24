@@ -8,7 +8,7 @@
 
     {% for articleRecent in articleRecents %}
         <div class="article">
-            <h1>{{articleRecent.title}}</h1>
+                <h2>{{articleRecent.title}}</h2>
             <div class="image visible"><img src="{{articleRecent.image}}" alt="{{ articleRecent.title }}" class="resp anim"></div>
             <p>{{ articleRecent.createdAt|date('d/m/Y') }}</p>
         </div>
