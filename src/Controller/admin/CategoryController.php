@@ -3,12 +3,6 @@
 namespace App\Controller\admin;
 
 
-use App\Repository\CategoryRepository ;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-
-
-namespace App\Controller\admin;
-
 use App\Entity\Category;
 use App\Form\CategoryType;
 use App\Repository\CategoryRepository ;
@@ -111,7 +105,7 @@ class CategoryController extends AbstractController
 
         if($categorieForm->isSubmitted() && $categorieForm->isValid())
         {
-            $categorie = $articleForm->getData();
+            $categorie = $categorieForm->getData();
 
             $entityManager->persist($categorie);
             $entityManager->flush();
