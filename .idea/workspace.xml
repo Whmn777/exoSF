@@ -1,7 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3d35731c-120d-4aa8-a838-1563f411cc6e" name="Default Changelist" comment="" />
+    <list default="true" id="3d35731c-120d-4aa8-a838-1563f411cc6e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/public/assets/css/admin_crud.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/insert_categorie.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/show_categorie.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CategoryController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/admin/ArticleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/admin/ArticleController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/admin/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/admin/CategoryController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Category.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/_header.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/_header.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/_header.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/_header.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/categories.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/list_categories.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/list_articles.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/list_articles.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/list_articles.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/list_articles.html.twig" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,6 +32,9 @@
         <option value="CSS File" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -132,17 +150,20 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/admin/category" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/public/assets/fonts" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/templates/admin/category" />
       <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/templates/admin" />
+      <recent name="$PROJECT_DIR$/templates/admin/category" />
+      <recent name="$PROJECT_DIR$/public/assets/fonts" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -154,7 +175,8 @@
       <option name="presentableId" value="Default" />
       <updated>1616062042028</updated>
       <workItem from="1616062044672" duration="1169000" />
-      <workItem from="1616066210145" duration="94802000" />
+      <workItem from="1616066210145" duration="96136000" />
+      <workItem from="1616598302135" duration="14599000" />
     </task>
     <servers />
   </component>
@@ -166,10 +188,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="512" y="166" key="#com.intellij.ide.util.MemberChooser/0.0.1440.900@0.0.1440.900" timestamp="1616528793861" />
-    <state x="458" y="212" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1616582909602">
+    <state x="458" y="212" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1616599620492">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="458" y="212" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1440.900@0.0.1440.900" timestamp="1616582909602" />
+    <state x="458" y="212" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1440.900@0.0.1440.900" timestamp="1616599620492" />
     <state x="488" y="183" key="NewPhpClassDialog" timestamp="1616538057855">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -178,10 +200,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="543" y="380" key="NewPhpFileDialog/0.0.1440.900@0.0.1440.900" timestamp="1616524576224" />
-    <state x="229" y="89" key="SettingsEditor" timestamp="1616522875675">
+    <state x="229" y="89" key="SettingsEditor" timestamp="1616598232602">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="229" y="89" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1616522875675" />
+    <state x="229" y="89" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1616598232602" />
     <state x="100" y="100" width="1240" height="700" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1616503728292">
       <screen x="0" y="23" width="1440" height="877" />
     </state>

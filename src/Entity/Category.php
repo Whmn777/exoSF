@@ -34,7 +34,7 @@ class Category
     /**
      * @ORM\Column(type="date")
      */
-    private $createAT;
+    private $createdAT;
 
     /**
      * @ORM\Column(type="boolean")
@@ -114,9 +114,9 @@ class Category
     /**
      * @return mixed
      */
-    public function getCreateAT()
+    public function getCreatedAT()
     {
-        return $this->createAT;
+        return $this->createdAT;
     }
 
     /**
@@ -152,11 +152,11 @@ class Category
     }
 
     /**
-     * @param mixed $createAT
+     * @param mixed $createdAT
      */
-    public function setCreateAT($createAT): void
+    public function setCreatedAT($createdAT): void
     {
-        $this->createAT = $createAT;
+        $this->createdAT = $createdAT;
     }
 
     /**

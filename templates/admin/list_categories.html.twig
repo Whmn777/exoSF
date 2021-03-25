@@ -7,11 +7,15 @@
             {#  Pour faire afficher le titre de ma catégorie : category.title
              grâce à la relation OneToMany qui relie les deux entités : article et category.#}
             <h2>{{ category.title }}</h2>
+            <button class="button">modifier</button>
+            <button class="button">supprimer</button>
 
             {# articles étant une arrayCollection j'effectue une boucle
             afin de récupérer tous les articles contenus dans chaque catégorie : ici on récupère le titre des articles#}
             {% for article in category.articles %}
                 <h3>{{ article.title }}</h3>
+                <button class="button">modifier</button>
+                <button class="button">supprimer</button>
             {% endfor%}
 
         {% endfor %}

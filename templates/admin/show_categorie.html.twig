@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block article %}
+
+    <section class="articles-container">
+
+        <article class="article">
+
+            <a href="{{ path('admin_show_categorie', {'id': categorie.id}) }}">
+                <h1>{{categorie.title}}</h1>
+            </a>
+
+            <button class="button">modifier</button>
+            <button class="button">supprimer</button>
+
+        </article>
+
+    </section>
+
+{% endblock %}

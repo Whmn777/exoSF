@@ -148,7 +148,11 @@ class ArticleController extends AbstractController
      * @route("/admin/articles/update/{id}", name ="admin_update_article")
      */
 
-    public function updateArticle(EntityManagerInterface $entityManager, ArticleRepository $articleRepository, $id)
+    public function updateArticle(
+        EntityManagerInterface $entityManager,
+        ArticleRepository $articleRepository,
+        Request $request,
+        $id)
     {
         //Je récupère l'article à modifier avec son {id};
         $article = $articleRepository -> find($id);
@@ -159,6 +163,24 @@ class ArticleController extends AbstractController
             throw $this->createNotFoundException('Article non trouvé.');
         }
 
+        $articleForm = $this->createForm(ArticleType::class, $article);
+
+        $articleForm->handleRequest($request);
+
+        if($articleForm->isSubmitted() && $articleForm->isValid())
+        {
+            $article = $articleForm->getData();
+
+            $entityManager->persist($article);
+            $entityManager->flush();
+        }
+
+        return $this->render("admin/insert_article.html.twig",[
+            "articleFormView" => $articleForm->createView()
+        ]);
+
+
+        /*
         //J'utilise les setteurs pour insérer mes nouvelles valeurs de mes propriétés
         $article->setTitle("Nouvel article modifié");
         $article->setContent("Cet article vient d'être modifié");
@@ -170,7 +192,7 @@ class ArticleController extends AbstractController
 
         return $this->render("admin/article_update.html.twig", [
             'article' => $article
-        ]);
+        ]);*/
 
 
     }

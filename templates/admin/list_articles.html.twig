@@ -1,5 +1,6 @@
 {% extends 'base.html.twig' %}
 
+
 {% block title %}
     Liste des articles
 {% endblock title %}
@@ -10,12 +11,67 @@
 
 
 {% block article %}
-    {% if articles|length>0 %}
-        {% for article in articles %}
-            <div class="article">
-                {% if article.category %}
+    <div class="row">
+        <div class="col-12">
+            <div class="d-flex column justify-content-around">
+                    <table class="table table-bordered border ">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th class="align-top">
+                                    <div class="custom-control custom-control-inline custom-checkbox custom-control-nameless m-0">
+                                        <input type="checkbox" class="custom-control-input" id="all-items">
+                                        <label class="custom-control-label" for="all-items"></label>
+                                    </div>
+                                </th>
+                                <th class=" primary">title</th>
+                                <th class="">content</th>
+                                <th class="">image</th>
+                                <th class="">createdAt</th>
+                                <th class="">isPublished</th>
+                                <th class="">Actions</th>
+                            </tr>
+                        </thead>
+
+                         {% if articles|length>0 %}
+                                 {% for article in articles %}
+
+                        <tbody>
+
+
+
+                            <tr>
+                                <td class="">
+                                    <div class="custom-control custom-control-inline custom-checkbox custom-control-nameless m-0 align-top">
+                                        <input type="checkbox" class="custom-control-input" id="item-1">
+                                        <label class="custom-control-label" for="item-1"></label>
+                                    </div>
+                                </td>
+
+                                <td class="" >{{article.title}}</td>
+                                <td class="">{{article.content}}</td>
+                                <td class="">
+                                    {{article.image}}
+                                </td>
+                                <td class="">{{ article.createdAt|date('d/m/Y') }}</td>
+                                <td class=""><span>{{article.isPublished}}</span></td>
+                                <td class="">
+                                    <div class="btn-group align-top">
+                                        <button class="btn btn-sm btn-outline-secondary badge" type="button" data-toggle="modal" data-target="#user-form-modal">Edit</button>
+                                        <button class="btn btn-sm btn-outline-secondary badge" type="button"><i class="fa fa-trash"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+            </div>
+         </div>
+    </div>
+             {# <div class="article">
+                 {% if article.category %}
                     <h1>{{ article.category.title }}</h1>
                 {%endif%}
+
                 <a href="{{ path('admin_show_article', {'id': article.id}) }}" class="lienArticles">
                     <h2 >{{article.title}}</h2>
                 </a>
@@ -23,9 +79,8 @@
                 <p>{{ article.createdAt|date('d/m/Y') }}</p>
 
                 <a href="{{ path('admin_delete_article', {'id': article.id}) }}">Supprimer</a>
-            </div>
+            </div> #}
 
-        {% endfor %}
     {% else %}
         <p>Il n'y a pas d'article correspondant à votre recherche</p>
     {% endif %}
