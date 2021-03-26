@@ -10,7 +10,9 @@ use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\String\Slugger\SluggerInterface;
 use Symfony\Component\Validator\Constraints\Date;
 
 class ArticleController extends AbstractController
@@ -80,7 +82,11 @@ class ArticleController extends AbstractController
      * @route("/admin/articles/insert", name="admin_insert_article")
      */
 
-    public function insertArticle(EntityManagerInterface $entityManager, Request $request)
+    public function insertArticle(
+        EntityManagerInterface $entityManager,
+        Request $request,
+        SluggerInterface $slugger
+    )
     {
         //Dans la variable $article, j'instancie un nouvel objet newArticle de la classe entité Article.
         //Je peux ainsi redéfinir à ma class entité des nouvelles propriétés, qui seront insérer comme des
@@ -100,11 +106,57 @@ class ArticleController extends AbstractController
         $articleForm->handleRequest($request);
 
         //Si les données du formulaire sont envoyées et qu'elles sont valides
-        if($articleForm->isSubmitted() && $articleForm->isValid()){
+        if($articleForm->isSubmitted() && $articleForm->isValid())
+        {
 
             //je les récupère avec la méthode getData() da la class FormInterface dans mon entité $article
             $article = $articleForm->getData();
 
+            //Je récupère les données de mon image rentrée par l'utilisateur dans le formulaire d'insertion :
+
+            $image = $articleForm->get('image')->getData();
+
+
+            //Si des données ont bien étaient rentrées :
+            if($image)
+            {
+                //Je stocke un nouveau nom d'image pour mon ancien nom récupéré depuis le formulaire :
+                $originalImage = pathinfo($image->getClientOriginalName(), PATHINFO_FILENAME);
+
+                //Pour cela avec la méthode slug() de la class SluggerInterface
+                //Je crée un slugg de mon nom d'image.
+                $safeImage = $slugger->slug($originalImage);
+
+                //Je stocke ce slugg dans une variable $newImage, pour laquelle j'instancie une nouvelle extension unique avec les méthodes :
+                //uniqid() => pour générer un nouvel id
+                //guessExtension()
+                $newImage = $safeImage.'-'.uniqid().'.'.$image->guessExtension();
+
+
+                // Je lance un test  : si mon nom d'image a bien été saisi
+                //et qu'il a bien bien été renommé avec un nom unique
+                //donc je le déplace avec la méthode move()
+                //dans mon dossier image (dans le dossier public => chemin gérer avec security yaml)
+                try {
+                    $image->move(
+                        $this->getParameter('images_directory'),
+                        $newImage
+
+                    );
+
+                //Je renvoie un message d'erreur si l'image n'a pu être enregistrée dans mon dossier images :
+
+                } catch (FileException $e) {
+                    throw new \Exception("l'image n'a pas été enregistrée");
+                }
+
+                //Avec mon setteur, j'enregistre ma nouvelle image dans l'entité $article que j'ai instancié :
+                $article->setImage($newImage);
+
+
+
+
+            }
             //J'envoie et enregistre tout en BDD.
             $entityManager->persist($article);
             $entityManager->flush();
@@ -116,6 +168,7 @@ class ArticleController extends AbstractController
 
         return $this->render("admin/insert_article.html.twig", [
             "articleFormView" => $articleForm->createView()
+
         ]);
 
         /*J'utilise les setteurs pour insérer mes nouvelles valeurs de mes propriétés

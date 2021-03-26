@@ -13,8 +13,8 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormTypeInterface;
-
-
+use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\HttpFoundation\File\File;
 
 class ArticleType extends AbstractType
 {
@@ -26,7 +26,16 @@ class ArticleType extends AbstractType
         $builder
             ->add('title')
             ->add('content')
-            ->add('image')
+            ->add('image', FileType::class,
+                array('data_class' => null),
+                [
+                'label' => 'image',
+                'required' => 'false',
+                //la valeur par défault pour l'envoie en BDD est "mapped" => "true"
+                //Je ne désire pas envoyer mon nom d'image directement en BDD, dc "mapped" => "false"
+                //car je désire traiter mon nom d'image en lui donnant un nom unique, entre autres.
+                'mapped' => 'false',
+            ])
             ->add('createdAt', DateType::class, [
                 'widget' => 'single_text',
                 'format' => 'yyyy-MM-dd'
@@ -50,6 +59,7 @@ class ArticleType extends AbstractType
             //Afin de pouvoir récupérer mes données dans ma BDD je lui précise l'entité à renseigner
             //grâce à Article::class
             'data_class' => Article::class,
+
         ]);
     }
 }

@@ -3,11 +3,17 @@
   <component name="ChangeListManager">
     <list default="true" id="3d35731c-120d-4aa8-a838-1563f411cc6e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/_header.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/_header.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/_header.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/_header.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/services.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/services.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/ArticleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ArticleController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CategoryController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/admin/ArticleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/admin/ArticleController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/admin/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/admin/CategoryController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Article.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Article.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Category.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/ArticleType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ArticleType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/CategoryType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/CategoryType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/insert_article.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/insert_article.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/admin/list_articles.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/list_articles.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/list_categories.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/list_categories.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -168,7 +174,8 @@
       <updated>1616062042028</updated>
       <workItem from="1616062044672" duration="1169000" />
       <workItem from="1616066210145" duration="96136000" />
-      <workItem from="1616598302135" duration="45841000" />
+      <workItem from="1616598302135" duration="53039000" />
+      <workItem from="1616768900699" duration="1542000" />
     </task>
     <servers />
   </component>
@@ -176,6 +183,10 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="184" y="112" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1616768077296">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="184" y="112" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.900@0.0.1440.900" timestamp="1616768077296" />
     <state x="443" y="259" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1616635818972">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -208,9 +219,9 @@
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="100" y="100" width="1240" height="700" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.23.1440.877@0.23.1440.877" timestamp="1616503728292" />
-    <state x="427" y="176" width="586" height="548" key="find.popup" timestamp="1616674331037">
+    <state x="427" y="176" width="586" height="548" key="find.popup" timestamp="1616768154319">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="427" y="176" width="586" height="548" key="find.popup/0.0.1440.900@0.0.1440.900" timestamp="1616674331037" />
+    <state x="427" y="176" width="586" height="548" key="find.popup/0.0.1440.900@0.0.1440.900" timestamp="1616768154319" />
   </component>
 </project>

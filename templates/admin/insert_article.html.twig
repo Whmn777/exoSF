@@ -12,7 +12,7 @@
 
     {{ form_start(articleFormView) }}
         <div class="form-group col_12 container d-flex column align-items-center m-5">
-                    <div class="form-group col-12 col-md-4 col-lg-3">
+                    <div class="form-group col-6 col-md-4 col-lg-3">
                         {{ form_errors(articleFormView.title) }}
                         {{ form_label(articleFormView.title) }}
                         {{ form_widget(articleFormView.title, {'attr': {'class':'form-control'}}) }}
@@ -22,12 +22,6 @@
                         {{ form_errors(articleFormView.content) }}
                         {{ form_label(articleFormView.content) }}
                         {{ form_widget(articleFormView.content, {'attr': {'class':'form-control'}}) }}
-                    </div>
-
-                    <div class="form-group col-6 col-md-4 col-lg-3">
-                        {{ form_errors(articleFormView.image) }}
-                        {{ form_label(articleFormView.image) }}
-                        {{ form_widget(articleFormView.image, {'attr': {'class':'form-control'}}) }}
                     </div>
 
                     <div class="form-group col-6 col-md-4 col-lg-3">
@@ -46,6 +40,12 @@
                         {{ form_errors(articleFormView.category) }}
                         {{ form_label(articleFormView.category) }}
                         {{ form_widget(articleFormView.category, {'attr': {'class':'form-control'}}) }}
+                    </div>
+
+                    <div class="form-group col-6 col-md-4 col-lg-3 m-2">
+                        {{ form_errors(articleFormView.image) }}
+                        {{ form_label(articleFormView.image) }}
+                        {{ form_widget(articleFormView.image, {'attr': {'class':'form-control'}}) }}
                     </div>
 
                     <div class="form-group col-6 col-md-2 col-lg-2">

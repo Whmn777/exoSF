@@ -45,10 +45,6 @@ class Category
      *
      * @Assert\Type("Date")
      *
-     * @Assert\Expression(
-     *     "this.getpublicationdate() > this.getcreationdate()",
-     *     message="La date de publication ne doit pas être antérieure à la date de creation"
-     * )
      */
     private $createdAT;
 
