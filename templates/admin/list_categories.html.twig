@@ -13,7 +13,12 @@
 {% block article %}
 
 
-    <a href="{{ path('admin_insert_categorie') }}">Ajouter une categorie</a>
+
+    <p>
+        <a href="{{ path('admin_insert_categorie') }}" class="btn btn-info btn-lg m-3">
+            <span class="glyphicon glyphicon-plus"></span> Ajouter une categorie
+        </a>
+    </p>
 
     <table class="table table-striped  table-bordered border-dark mt-4 container">
         <div class="d-flex justify-content-around">

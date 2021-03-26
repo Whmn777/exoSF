@@ -13,19 +13,25 @@
 {% block article %}
 
 
-                    <a href="{{ path('admin_insert_article') }}">Ajouter un article</a>
+
+    <p>
+        <a href="{{ path('admin_insert_article') }}" class="btn btn-info btn-lg m-3">
+            <span class="glyphicon glyphicon-plus"></span> Ajouter un article
+        </a>
+    </p>
+
 
     <table class="table table-striped  table-bordered border-dark mt-4 container">
         <div class="d-flex justify-content-around">
             <thead class="thead-dark container">
                             <tr>
-                                <th class="align-top col-1">
+                                <th class="align-top">
                                     <div class="custom-control custom-control-inline custom-checkbox custom-control-nameless m-0 col-1">
                                         <input type="checkbox" class="custom-control-input" id="all-items">
                                         <label class="custom-control-label" for="all-items"></label>
                                     </div>
                                 </th>
-                                <th class="col-2">Titre</th>
+                                <th class="">Titre</th>
                                 <th class="col-2">Résumé</th>
                                 <th class="col-2">image</th>
                                 <th class="col-2">Créer le</th>
@@ -40,14 +46,14 @@
 
                                         <tbody>
                                             <tr >
-                                                <td class="col-1">
+                                                <td class="">
                                                     <div class="custom-control custom-control-inline custom-checkbox custom-control-nameless m-0 align-top">
                                                         <input type="checkbox" class="custom-control-input" id="item-1">
                                                         <label class="custom-control-label" for="item-1"></label>
                                                     </div>
                                                 </td>
 
-                                                <td class="col-2" >{{article.title}}</td>
+                                                <td class="" >{{article.title}}</td>
                                                 <td class="col-2">{{article.content}}</td>
                                                 <td class="col-2">
                                                     <img src="{{article.image}}" class="img-fluid"/>
