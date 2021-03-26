@@ -26,18 +26,22 @@ class Category
 
     /**
      * @ORM\Column(type="string", length=255)
+     *
+     * @Assert\NotBlank(message="Veuillez renseigner un titre")
      */
     private $title;
 
     /**
      * @ORM\Column(type="text")
+     *
+     * @Assert\NotBlank(message="Veuillez rentrer une description")
      */
     private $description;
 
     /**
      * @ORM\Column(type="datetime", nullable=true)
      *
-     * @Assert\NotBlank(message="Tu dois remplir ce champ")
+     * @Assert\NotBlank(message="Vous devez remplir ce champ")
      *
      * @Assert\Type("Date")
      *
