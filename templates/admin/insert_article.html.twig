@@ -11,42 +11,51 @@
     articleFormView définit dans ma fonction insertArticle de mon ArticleController#}
 
     {{ form_start(articleFormView) }}
-        <div class="form-group">
-            {{ form_label(articleFormView.title, 'titre', {'label_attr': {'class':'form'}}) }}
+        <div class="form-group col_12 container d-flex column align-items-center m-5">
+                    <div class="form-group col-12 col-md-4 col-lg-3">
+                        {{ form_errors(articleFormView.title) }}
+                        {{ form_label(articleFormView.title) }}
+                        {{ form_widget(articleFormView.title, {'attr': {'class':'form-control'}}) }}
+                    </div>
 
-            {{ form_widget(articleFormView.title, {'attr': {'class':'form-control'}}) }}
+                    <div class="form-group col-6 col-md-4 col-lg-3">
+                        {{ form_errors(articleFormView.content) }}
+                        {{ form_label(articleFormView.content) }}
+                        {{ form_widget(articleFormView.content, {'attr': {'class':'form-control'}}) }}
+                    </div>
+
+                    <div class="form-group col-6 col-md-4 col-lg-3">
+                        {{ form_errors(articleFormView.image) }}
+                        {{ form_label(articleFormView.image) }}
+                        {{ form_widget(articleFormView.image, {'attr': {'class':'form-control'}}) }}
+                    </div>
+
+                    <div class="form-group col-6 col-md-4 col-lg-3">
+                        {{ form_errors(articleFormView.createdAt) }}
+                        {{ form_label(articleFormView.createdAt) }}
+                        {{ form_widget(articleFormView.createdAt, {'attr': {'class':'form-control'}}) }}
+                    </div>
+
+                    <div class="form-group col-6 col-md-4 col-lg-3">
+                        {{ form_errors(articleFormView.isPublished) }}
+                        {{ form_label(articleFormView.isPublished) }}
+                        {{ form_widget(articleFormView.isPublished, {'attr': {'class':'form-control'}}) }}
+                    </div>
+
+                    <div class="form-group col-6 col-md-4 col-lg-3">
+                        {{ form_errors(articleFormView.category) }}
+                        {{ form_label(articleFormView.category) }}
+                        {{ form_widget(articleFormView.category, {'attr': {'class':'form-control'}}) }}
+                    </div>
+
+                    <div class="form-group col-6 col-md-2 col-lg-2">
+                        {{ form_widget(articleFormView.valider, {'attr': {'class':'form-submit btn btn-secondary'}}) }}
+                    </div>
+
         </div>
-
-    <div class="form-group">
-        {{ form_label(articleFormView.content, 'content', {'label_attr': {'class':'form'}}) }}
-
-        {{ form_widget(articleFormView.content, {'attr': {'class':'form'}}) }}
-    </div>
-
-    <div class="form-group">
-        {{ form_label(articleFormView.image, 'image', {'label_attr': {'class':'form'}}) }}
-
-        {{ form_widget(articleFormView.image, {'image': {'class':'form'}}) }}
-    </div>
-
-    <div class="form-group">
-        {{ form_label(articleFormView.createdAt, 'createdAt', {'label_attr': {'class':'form'}}) }}
-
-        {{ form_widget(articleFormView.createdAt, {'attr': {'class':'form'}}) }}
-    </div>
-
-    <div class="form-group">
-        {{ form_label(articleFormView.isPublished, 'isPublished', {'label_attr': {'class':'form'}}) }}
-
-        {{ form_widget(articleFormView.isPublished, {'attr': {'class':'form'}}) }}
-    </div>
-
-    <div class="submit-form-article">
-        {{ form_widget(articleFormView.valider, {'attr': {'class':'form'}}) }}
-    </div>
-
-
     {{ form_end(articleFormView) }}
+
+    <a href="{{ path('admin_list_articles') }}">Retour aux articles</a>
 
 
 {% endblock article %}

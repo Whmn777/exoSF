@@ -11,7 +11,7 @@
     categorieFormView définit dans ma fonction insertCategory de mon CategoryController#}
 
     {{ form_start(categorieFormView) }}
-    <div class="form-group primary">
+    <div class="form-group">
         {{ form_label(categorieFormView.title, 'titre', {'label_attr': {'class':'form'}}) }}
 
         {{ form_widget(categorieFormView.title, {'attr': {'class':'form-control'}}) }}
@@ -35,8 +35,8 @@
         {{ form_widget(categorieFormView.isPublished, {'attr': {'class':'form'}}) }}
     </div>
 
-    <div class="form-group submit-form-categorie">
-        {{ form_widget(categorieFormView.valider, {'attr': {'class':'form-submit'}}) }}
+    <div class="submit-form-categorie">
+        {{ form_widget(categorieFormView.valider, {'attr': {'class':'form-delete'}}) }}
     </div>
 
 

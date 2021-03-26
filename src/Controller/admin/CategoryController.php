@@ -136,8 +136,9 @@ class CategoryController extends AbstractController
         $entityManager->flush();
 
 
-
-        return $this->redirectToRoute('admin_list_categories');
+        return $this->render('admin/delete_categorie.html.twig.html.twig
+        ');
+        //return $this->redirectToRoute('admin_insert_categorie');
     }
 
 }

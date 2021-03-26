@@ -179,6 +179,7 @@ class ArticleController extends AbstractController
             "articleFormView" => $articleForm->createView()
         ]);
 
+        return $this->redirectToRoute('admin_list_articles');
 
         /*
         //J'utilise les setteurs pour insérer mes nouvelles valeurs de mes propriétés

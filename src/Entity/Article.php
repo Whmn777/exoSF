@@ -3,8 +3,13 @@
 namespace App\Entity;
 
 
-use App\Repository\ArticleRepository;
+
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\Validator\Constraints\DateTime;
+use Symfony\Component\Validator\Constraints\Date;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\ArticleRepository;
+
 /**
  * @ORM\Entity(repositoryClass=ArticleRepository::class)
  */
@@ -19,26 +24,39 @@ class Article
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank(message="Veuillez renseigner un titre")
      */
     private $title;
 
     /**
      * @ORM\Column(type="text")
+     * @Assert\NotBlank(message="Veuillez renseigner une description")
      */
     private $content;
 
     /**
      * @ORM\Column(type="string", length=700)
+     * @Assert\Url(message="Veuillez rentrer une url")
+     * @Assert\NotBlank(message="Veuillez rentrer une url")
      */
     private $image;
 
     /**
-     * @ORM\Column(type="date")
+     * @ORM\Column(type="datetime", nullable=true)
+     * @Assert\NotBlank(message="Tu dois remplir ce champ")
+     *
+     * @Assert\Type("Date")
+     *
+     * @Assert\Expression(
+     *     "this.getpublicationdate() > this.getcreationdate()",
+     *     message="La date de publication ne doit pas être antérieure à la date de creation"
+     * )
      */
     private $createdAt;
 
     /**
      * @ORM\Column(type="boolean", nullable=true)
+     *
      */
     private $isPublished;
 

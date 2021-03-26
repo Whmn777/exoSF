@@ -3,9 +3,12 @@
 
 namespace App\Entity;
 
+use Symfony\Component\Validator\Constraints\Date;
+use Symfony\Component\Validator\Constraints\DateTime;
+use Symfony\Component\Validator\Constraints as Assert;
+use Doctrine\ORM\Mapping as ORM;
 use App\Repository\CategoryRepository;
 use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\ORM\Mapping as ORM;
 /**
  * @ORM\Entity(repositoryClass=CategoryRepository::Class)
  */
@@ -32,7 +35,16 @@ class Category
     private $description;
 
     /**
-     * @ORM\Column(type="date")
+     * @ORM\Column(type="datetime", nullable=true)
+     *
+     * @Assert\NotBlank(message="Tu dois remplir ce champ")
+     *
+     * @Assert\Type("Date")
+     *
+     * @Assert\Expression(
+     *     "this.getpublicationdate() > this.getcreationdate()",
+     *     message="La date de publication ne doit pas être antérieure à la date de creation"
+     * )
      */
     private $createdAT;
 
