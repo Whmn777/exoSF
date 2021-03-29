@@ -3,6 +3,7 @@
 
 namespace App\Controller\admin;
 
+
 use App\Entity\Article;
 use App\Form\ArticleType;
 use App\Repository\ArticleRepository;
@@ -14,6 +15,7 @@ use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\String\Slugger\SluggerInterface;
 use Symfony\Component\Validator\Constraints\Date;
+use App\FilesServices\FilePersister;
 
 class ArticleController extends AbstractController
 {
@@ -85,7 +87,7 @@ class ArticleController extends AbstractController
     public function insertArticle(
         EntityManagerInterface $entityManager,
         Request $request,
-        SluggerInterface $slugger
+        FilePersister $filePersister
     )
     {
         //Dans la variable $article, j'instancie un nouvel objet newArticle de la classe entité Article.
@@ -112,7 +114,10 @@ class ArticleController extends AbstractController
             //je les récupère avec la méthode getData() da la class FormInterface dans mon entité $article
             $article = $articleForm->getData();
 
-            //Je récupère les données de mon image rentrée par l'utilisateur dans le formulaire d'insertion :
+            //J'utilise ma méthode saveFile() de ma class FilePersistor que j'ai crée dans un service.
+            $article = $filePersister->saveFile($article, $articleForm);
+            /*Upload d'image avant refactorisation dans un service : FilesServices
+             * Je récupère les données de mon image rentrée par l'utilisateur dans le formulaire d'insertion :
 
             $image = $articleForm->get('image')->getData();
 
@@ -120,7 +125,8 @@ class ArticleController extends AbstractController
             //Si des données ont bien étaient rentrées :
             if($image)
             {
-                //Je stocke un nouveau nom d'image pour mon ancien nom récupéré depuis le formulaire :
+                //Je récupère l'image uploadé par l'utilisateur et la stocke dans un dossier temporaire :
+                // chemin vers le dossier temporaire de l'image
                 $originalImage = pathinfo($image->getClientOriginalName(), PATHINFO_FILENAME);
 
                 //Pour cela avec la méthode slug() de la class SluggerInterface
@@ -148,18 +154,22 @@ class ArticleController extends AbstractController
 
                 } catch (FileException $e) {
                     throw new \Exception("l'image n'a pas été enregistrée");
-                }
+                }*/
 
                 //Avec mon setteur, j'enregistre ma nouvelle image dans l'entité $article que j'ai instancié :
-                $article->setImage($newImage);
+                //$article->setImage($newFile);
 
 
 
-
-            }
             //J'envoie et enregistre tout en BDD.
             $entityManager->persist($article);
             $entityManager->flush();
+
+        // après suppression d'un article, j'ajoute un message flash (dans la session)
+        // pour l'afficher sur la prochaine page
+        $this->addFlash("success", "L'article ". $article->getTitle() ." a bien été chargé !");
+
+        return $this->redirectToRoute('admin_list_articles');
         }
 
         //Je retourne ma méthode insertArticle() pour l'afficher avec la méthode render():
@@ -192,8 +202,6 @@ class ArticleController extends AbstractController
         //Je retourne donc le résultat de ma fonction en l'affichant sur la page admin/articles.html.twig, avec la méthode
         //render() de l'AbstractController.
         return $this->render('admin/article.html.twig');*/
-
-
 
     }
 
